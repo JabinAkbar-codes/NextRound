@@ -1,0 +1,21 @@
+/* Tailwind utilities only — preflight (the base CSS reset) is intentionally
+   left out so it doesn't fight Mantine's own component reset/styles.
+   Available for any utility-class styling you add on top of the existing
+   CSS-module pages (e.g. className="flex items-center gap-2"). */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --color-brand-50: #f2f8fd;
+  --color-brand-100: #e3f0fb;
+  --color-brand-200: #c9e2f7;
+  --color-brand-300: #a8d0f2;
+  --color-brand-400: #82bced;
+  --color-brand-500: #5aa6e6;
+  --color-brand-600: #3d8ed9;
+  --color-brand-700: #3474b8;
+  --color-brand-800: #2c5f96;
+  --color-brand-900: #244c78;
+  --font-display: "Sora", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}

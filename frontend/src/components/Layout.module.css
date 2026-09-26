@@ -1,0 +1,161 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #dbe8f5;
+}
+
+.navInner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.15s ease;
+}
+
+.logoLink:hover {
+  transform: scale(1.03);
+}
+
+.links {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.link {
+  position: relative;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5b7794;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 3px;
+  height: 2px;
+  border-radius: 2px;
+  background: #3d8ed9;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+}
+
+.link:hover {
+  background: #eaf3fc;
+  color: #244c78;
+}
+
+.linkActive {
+  background: #eaf3fc;
+  color: #2c5f96;
+}
+
+.linkLocked {
+  opacity: 0.55;
+}
+
+.desktopAction {
+  display: flex;
+  align-items: center;
+}
+
+.burger {
+  display: none;
+}
+
+.main {
+  flex: 1;
+  padding: 32px 0 64px;
+}
+
+/* Below this width the inline nav starts crowding and wrapping badly, so we
+   switch to a hamburger + slide-out drawer instead of squeezing links. */
+@media (max-width: 880px) {
+  .links,
+  .desktopAction {
+    display: none;
+  }
+  .burger {
+    display: block;
+  }
+  .navInner {
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navInner {
+    padding: 10px 16px;
+  }
+}
+
+/* ---- Mobile drawer ---- */
+.drawerContent {
+  background: #ffffff;
+}
+
+.drawerHeader {
+  border-bottom: 1px solid #dbe8f5;
+  padding-bottom: 14px;
+}
+
+.drawerLink {
+  display: block;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.drawerLinkInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 13px 14px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #33475e;
+}
+
+.drawerLinkActive {
+  background: #eaf3fc;
+  color: #2c5f96;
+}
+
+.drawerUser {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #244c78;
+}

@@ -1,0 +1,128 @@
+.setupCard {
+  max-width: 480px;
+  margin: 20px auto;
+  background: #ffffff;
+  border: 1px solid #dbe8f5;
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1.5px solid #dbe8f5;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color: #5b7794;
+}
+
+.tabActive {
+  background: #eaf3fc;
+  color: #2c5f96;
+  border-color: #82bced;
+}
+
+.roomWrap {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.codeBadge {
+  font-family: 'Sora', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: #2c5f96;
+  background: #eaf3fc;
+  padding: 14px 28px;
+  border-radius: 16px;
+  display: inline-block;
+  margin: 16px 0;
+}
+
+.playerRow {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.playerChip {
+  background: #f2f8fd;
+  border: 1px solid #dbe8f5;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #33475e;
+}
+
+.leaderboard {
+  max-width: 420px;
+  margin: 20px auto 0;
+}
+
+.lbRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #dbe8f5;
+  margin-bottom: 8px;
+}
+
+.lbRank {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  color: #3d8ed9;
+  width: 28px;
+}
+
+.questionCard {
+  background: #ffffff;
+  border: 1px solid #dbe8f5;
+  border-radius: 20px;
+  padding: 28px;
+  text-align: left;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.option {
+  text-align: left;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #dbe8f5;
+  background: #f9fcff;
+  cursor: pointer;
+  font-size: 14.5px;
+}
+
+.optionSelected {
+  border-color: #3d8ed9;
+  background: #eaf3fc;
+  font-weight: 600;
+}
+
+@media (max-width: 380px) {
+  .setupCard {
+    padding: 22px 18px;
+  }
+}

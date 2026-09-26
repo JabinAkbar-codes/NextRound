@@ -1,0 +1,161 @@
+.wrap {
+  margin-top: 56px;
+}
+
+.formCard {
+  background: linear-gradient(135deg, #eaf3fc, #f6fafe);
+  border: 1px solid #dbe8f5;
+  border-radius: 20px;
+  padding: 32px;
+  text-align: center;
+}
+
+.formTitle {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #1a2b40;
+  margin-bottom: 6px;
+}
+
+.formSubtitle {
+  font-size: 14.5px;
+  color: #5b7794;
+  max-width: 480px;
+  margin: 0 auto 20px;
+  line-height: 1.5;
+}
+
+.starsRow {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.starBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  color: #c9d9e8;
+  transition: transform 0.12s ease, color 0.12s ease;
+}
+
+.starBtn:hover {
+  transform: scale(1.15);
+}
+
+.starActive {
+  color: #f5a623;
+}
+
+.formInner {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.thanksBox {
+  text-align: center;
+  padding: 20px;
+}
+
+.thanksTitle {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #2c5f96;
+  margin-bottom: 4px;
+}
+
+/* ---- Testimonials ---- */
+.testimonialSection {
+  margin-top: 48px;
+}
+
+.testimonialHeading {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #1a2b40;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.staticGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.marqueeOuter {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scrollLeft 38s linear infinite;
+}
+
+.marqueeOuter:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #dbe8f5;
+  border-radius: 16px;
+  padding: 18px 20px;
+  width: 280px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.staticGrid .card {
+  width: auto;
+}
+
+.cardStars {
+  display: flex;
+  gap: 2px;
+  color: #f5a623;
+}
+
+.cardMessage {
+  font-size: 13.5px;
+  color: #33475e;
+  line-height: 1.55;
+}
+
+.cardName {
+  font-size: 13px;
+  font-weight: 700;
+  color: #244c78;
+  margin-top: auto;
+}
+
+.emptyNote {
+  text-align: center;
+  color: #5b7794;
+  font-size: 14px;
+}
+
+@media (max-width: 560px) {
+  .formCard {
+    padding: 24px 18px;
+  }
+  .card {
+    width: 240px;
+  }
+}

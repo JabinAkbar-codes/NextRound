@@ -1,0 +1,52 @@
+.wrap {
+  max-width: 420px;
+  margin: 40px auto;
+  background: #ffffff;
+  border: 1px solid #dbe8f5;
+  border-radius: 20px;
+  padding: 36px 32px;
+}
+
+.title {
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a2b40;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #5b7794;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.switchRow {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #5b7794;
+  text-align: center;
+}
+
+.switchLink {
+  color: #3d8ed9;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.notice {
+  background: #eaf3fc;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #2c5f96;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 380px) {
+  .wrap {
+    margin: 24px auto;
+    padding: 26px 20px;
+  }
+}

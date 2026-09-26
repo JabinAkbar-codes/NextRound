@@ -1,0 +1,134 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.title {
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 700px) {
+  .statsGrid { grid-template-columns: 1fr; }
+}
+
+.statCard {
+  background: #ffffff;
+  border: 1px solid #dbe8f5;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.statNum {
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+  color: #2c5f96;
+}
+
+.statLabel {
+  font-size: 13px;
+  color: #5b7794;
+  margin-top: 4px;
+}
+
+.section {
+  background: #ffffff;
+  border: 1px solid #dbe8f5;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.topicRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.topicName {
+  flex: 0 0 100px;
+  width: 100px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #33475e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topicName.wide {
+  flex-basis: 160px;
+  width: 160px;
+}
+
+.topicScore {
+  flex: 0 0 auto;
+  width: 48px;
+  text-align: right;
+  font-size: 13px;
+  color: #5b7794;
+}
+
+@media (max-width: 420px) {
+  .topicName {
+    flex-basis: 72px;
+    width: 72px;
+    font-size: 12px;
+  }
+  .topicName.wide {
+    flex-basis: 100px;
+    width: 100px;
+  }
+}
+
+.tagRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tagWeak {
+  background: #fbeae7;
+  color: #c0554a;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.tagStrong {
+  background: #eaf6ee;
+  color: #2e8b57;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.empty {
+  text-align: center;
+  color: #5b7794;
+  padding: 40px 0;
+}

@@ -1,0 +1,142 @@
+.setupCard {
+  max-width: 480px;
+  margin: 20px auto;
+  background: #ffffff;
+  border: 1px solid #dbe8f5;
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.panel {
+  background: #ffffff;
+  border: 1px solid #dbe8f5;
+  border-radius: 18px;
+  padding: 22px;
+}
+
+.problemTitle {
+  font-family: 'Sora', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #1a2b40;
+}
+
+.problemBody {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #33475e;
+  white-space: pre-wrap;
+}
+
+.editorTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.editor {
+  width: 100%;
+  min-height: 340px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 13.5px;
+  line-height: 1.6;
+  background: #0f2138;
+  color: #eaf3fc;
+  border-radius: 12px;
+  border: none;
+  padding: 16px;
+  resize: vertical;
+  tab-size: 4;
+}
+
+.resultsWrap {
+  margin-top: 16px;
+}
+
+.testCase {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #dbe8f5;
+  margin-bottom: 8px;
+  font-size: 13.5px;
+}
+
+.pass {
+  color: #2e8b57;
+}
+
+.fail {
+  color: #c0554a;
+}
+
+.summaryBar {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.timerBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  max-width: 160px;
+  margin: 0 auto 16px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: #eaf3fc;
+  color: #2c5f96;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.timerBarUrgent {
+  background: #fbeae7;
+  color: #c0554a;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.loadingBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  color: #5b7794;
+  font-size: 14.5px;
+  max-width: 320px;
+}
+
+@media (max-width: 380px) {
+  .setupCard {
+    padding: 22px 18px;
+  }
+  .panel {
+    padding: 16px;
+  }
+}
