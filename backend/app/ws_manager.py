@@ -15,21 +15,28 @@ class RoomManager:
     def __init__(self):
         self.rooms: dict[str, dict[str, WebSocket]] = {}
         self.scores: dict[str, dict[str, int]] = {}
+        self.names: dict[str, dict[str, str]] = {}
 
     async def connect(self, code: str, user_id: str, user_name: str, ws: WebSocket):
         await ws.accept()
         self.rooms.setdefault(code, {})[user_id] = ws
         self.scores.setdefault(code, {}).setdefault(user_id, 0)
+        self.names.setdefault(code, {})[user_id] = user_name
         await self.broadcast(code, {
             "type": "player_joined",
             "user_id": user_id,
             "name": user_name,
-            "players": list(self.rooms[code].keys()),
+            "players": [
+                {"user_id": uid, "name": self.names[code].get(uid, "Player")}
+                for uid in self.rooms[code].keys()
+            ],
         })
 
     def disconnect(self, code: str, user_id: str):
         if code in self.rooms and user_id in self.rooms[code]:
             del self.rooms[code][user_id]
+        if code in self.names and user_id in self.names[code]:
+            del self.names[code][user_id]
         if code in self.rooms and not self.rooms[code]:
             del self.rooms[code]
 
@@ -46,8 +53,9 @@ class RoomManager:
 
     def leaderboard(self, code: str) -> list[dict]:
         board = self.scores.get(code, {})
+        names = self.names.get(code, {})
         return sorted(
-            [{"user_id": uid, "score": s} for uid, s in board.items()],
+            [{"user_id": uid, "name": names.get(uid, "Player"), "score": s} for uid, s in board.items()],
             key=lambda x: x["score"],
             reverse=True,
         )

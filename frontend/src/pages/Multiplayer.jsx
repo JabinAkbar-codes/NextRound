@@ -35,7 +35,7 @@ export default function Multiplayer() {
     ws.onmessage = (event) => {
       const data = JSON.parse(event.data)
       if (data.type === 'player_joined') setPlayers(data.players)
-      if (data.type === 'player_left') setPlayers((p) => p.filter((id) => id !== data.user_id))
+      if (data.type === 'player_left') setPlayers((p) => p.filter((pl) => pl.user_id !== data.user_id))
       if (data.type === 'battle_started') {
         setQuestions(data.questions)
         setCurrentQ(0)
@@ -148,7 +148,7 @@ export default function Multiplayer() {
         <div style={{ color: '#5b7794' }}>Share this code with your friends</div>
         <div className={styles.codeBadge}>{code}</div>
         <div className={styles.playerRow}>
-          {players.map((p) => <div key={p} className={styles.playerChip}>{p === user?.user_id ? `${user.name} (you)` : 'Player'}</div>)}
+          {players.map((p) => <div key={p.user_id} className={styles.playerChip}>{p.user_id === user?.user_id ? `${user.name} (you)` : p.name}</div>)}
         </div>
         {isHost ? (
           <Button radius="xl" onClick={startBattle} disabled={players.length < 1}>Start battle</Button>
@@ -192,7 +192,7 @@ export default function Multiplayer() {
           {leaderboard.map((row, i) => (
             <div key={row.user_id} className={styles.lbRow}>
               <span className={styles.lbRank}>#{i + 1}</span>
-              <span>{row.user_id === user?.user_id ? `${user.name} (you)` : 'Player'}</span>
+              <span>{row.user_id === user?.user_id ? `${user.name} (you)` : row.name}</span>
               <span>{row.score} pts</span>
             </div>
           ))}
@@ -210,7 +210,7 @@ export default function Multiplayer() {
         {leaderboard.map((row, i) => (
           <div key={row.user_id} className={styles.lbRow}>
             <span className={styles.lbRank}>#{i + 1}</span>
-            <span>{row.user_id === user?.user_id ? `${user.name} (you)` : 'Player'}</span>
+            <span>{row.user_id === user?.user_id ? `${user.name} (you)` : row.name}</span>
             <span>{row.score} pts</span>
           </div>
         ))}
