@@ -167,3 +167,18 @@
   font-size: 14px;
   color: #5b7794;
 }
+
+@media (max-width: 880px) {
+  .strip {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media (min-width: 310px) and (max-width: 760px) {
+  .strip {
+    justify-content: center;
+    align-items: center;
+  }
+}
